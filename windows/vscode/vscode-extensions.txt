@@ -1,0 +1,16 @@
+adpyke.vscode-sql-formatter
+bogem.bogems-night-owl
+devwright.vscode-terminal-capture
+dotjoshjohnson.xml
+esbenp.prettier-vscode
+manasxx.background-cover
+ms-ceintl.vscode-language-pack-zh-hans
+ms-vscode-remote.remote-wsl
+ms-vscode.wordcount
+mushan.vscode-paste-image
+redhat.vscode-xml
+tencent-cloud.coding-copilot
+tomoki1207.pdf
+usernamehw.errorlens
+vscode-icons-team.vscode-icons
+vscodevim.vim

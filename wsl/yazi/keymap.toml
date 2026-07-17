@@ -1,0 +1,8 @@
+[[mgr.prepend_keymap]]
+on   = [ "J" ]
+run  = "arrow 5"
+desc = "Move cursor down 5 lines"
+[[mgr.prepend_keymap]]
+on   = [ "K" ]
+run  = "arrow -5"
+desc = "Move cursor up 5 lines"

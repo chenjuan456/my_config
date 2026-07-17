@@ -1,0 +1,457 @@
+ophnmvc,asdfgwer",
+  "editor.lineNumbers": "relative",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["."],
+      "after": [";"]
+    },
+    {
+      "before": [";"],
+      "after": ["."]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["extension.terminalCapture.runCapture"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.showCommands"],
+      "silent": true
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["<leader>", "9"],
+      "after": ["c", "i", "W", "(", ")", "<Esc>", "P"]
+    },
+    {
+      "before": ["<leader>", "{"],
+      "after": ["c", "i", "W", "{", "}", "<Esc>", "P"]
+    },
+    {
+      "before": ["\""],
+      "after": ["c", "i", "W", "\"", "\"", "<Esc>", "P"]
+    },
+    {
+      "before": ["<leader>", "'"],
+      "after": ["c", "i", "W", "'", "'", "<Esc>", "P"]
+    },
+    {
+      "before": ["<leader>", "["],
+      "after": ["c", "i", "W", "[", "]", "<Esc>", "P"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "after": ["1", "5", "k"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["1", "5", "j"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<leader>", "="],
+      "commands": ["editor.action.fontZoomIn"]
+    },
+    {
+      "before": ["<leader>", "-"],
+      "commands": ["editor.action.fontZoomOut"]
+    },
+    {
+      "before": ["<leader>", "v"],
+      "commands": [
+        "workbench.action.splitEditor",
+        "workbench.action.closeSidebar"
+      ]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": [
+        "workbench.view.explorer",
+        "workbench.files.action.focusFilesExplorer"
+      ]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["editor.action.jumpToBracket"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "y"],
+      "after": ["y", "i", "W"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      "before": ["<backspace>"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["<tab>"],
+      "after": [">", ">"]
+    },
+    {
+      "before": ["<leader>", "i"],
+      "after": ["<leader>", "<leader>", "b"]
+    },
+    {
+      "before": ["<leader>", ","],
+      "after": ["<leader>", "<leader>", "w"]
+    },
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "after": [":", "%", "y", "<cr>"]
+    },
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    {
+      "before": ["g", "n"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
+      "before": ["g", "o"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeEditorsInGroup"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.insertCursorBelow"]
+    },
+    {
+      "before": ["<leader>", "u"],
+      "after": ["<C-u>"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>", "l"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": ["."],
+      "after": [";"]
+    },
+    {
+      "before": [";"],
+      "after": ["."]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "after": ["1", "5", "k"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["1", "5", "j"]
+    },
+    {
+      "before": ["<backspace>"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "i"],
+      "after": ["<leader>", "<leader>", "b"]
+    },
+    {
+      "before": ["<leader>", ","],
+      "after": ["<leader>", "<leader>", "e"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "backgroundCover.opacity": 0.6,
+  "Lingma.cloudModelAutoTriggerGenerateLength": "disable",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorBlinking": "solid",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.quickSuggestionsDelay": 50,
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
+  "terminal.integrated.suggest.quickSuggestions": {
+    "commands": "on",
+    "arguments": "on",
+    "unknown": "on"
+  },
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "git.openRepositoryInParentFolders": "never",
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.reuseTabs": true,
+  "vscode-office.editorTheme": "Github Dark",
+  "Lingma.cloudModelEnable": false,
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "editor.wordWrap": "off",
+  "[matlab]": {
+    "editor.defaultFormatter": "AffenWiesel.matlab-formatter"
+  },
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 2,
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.3)",
+    "rgba(127,255,127,0.3)",
+    "rgba(255,127,255,0.3)",
+    "rgba(79,236,236,0.3)"
+  ],
+  "Codegeex.License": "",
+  "Codegeex.CompletionDelay": 3,
+  "codegeex.codeLens.functionQuickOptions": {
+    "explainCode": false,
+    "ghostComment": false,
+    "fixBug": false,
+    "generateUnitTest": false,
+    "reviewCode": false,
+    "codeOptimization": false,
+    "addDocString": false,
+    "addExceptionHandling": false,
+    "printLogForDebugging": false,
+    "improveRunningEfficiency": false,
+    "renameSymbols": false,
+    "newFileForDebugging": false,
+    "tryANewApproach": false,
+    "addComment": false
+  },
+  "codegeex.codeLens.enableCodeLens": "disable",
+  "codegeex.codeLens.classQuickOptions": {
+    "explainCode": false,
+    "ghostComment": false,
+    "fixBug": false,
+    "generateUnitTest": false,
+    "reviewCode": false,
+    "addDocStringForClass": false,
+    "addDocStringForMethods": false,
+    "addComment": false
+  },
+  "Codegeex.Privacy": true,
+  "Codegeex.DisabledFor": {
+    "matlab": true
+  },
+  "Codegeex.EnableExtension": false,
+  "Lingma.methodQuickOperation": false,
+  "editor.fontFamily": "JetBrains Mono",
+  "workbench.colorTheme": "Bogem's Night Owl",
+  "trae.enableCodelens": {
+    "enableInlineDocumentation": false,
+    "enableInlineExplain": false
+  },
+  "trae.tab.cue": false,
+  "trae.tab.enableRename": false,
+  "trae.tab.enableAutoImport": false,
+  "trae.enableInlineCommand": false,
+  "python.createEnvironment.trigger": "off",
+  "QoderCN.cloudModelAutoTriggerDisplayRule": false,
+  "QoderCN.methodQuickOperation": false,
+  "QoderCN.cloudModelAutoTriggerGenerateLength": "disable",
+  "trae.tab.enableTabKeyboardShortcuts": false,
+  "QoderCN.cloudModelLanguagesOrFileExtensions": "plaintext,python",
+  "chatgpt.localeOverride": "zh-CN",
+  "git.confirmSync": false,
+  "window.openFoldersInNewWindow": "on",
+  "chat.agent.enabled": false,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "editor.formatOnPaste": true,
+  "editor.suggest.insertMode": "replace",
+  "terminal.integrated.suggest.enabled": false,
+  "codingcopilot.enableCompletionLanguage": {
+    "scminput": false,
+    "python": false
+  },
+  "claudeCode.preferredLocation": "panel",
+  "chat.extensionUnification.enabled": false,
+  "editor.fontSize": 15,
+  "editor.inlineSuggest.edits.allowCodeShifting": "never",
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "editor.inlineSuggest.showToolbar": "never",
+  "editor.inlineSuggest.syntaxHighlightingEnabled": false,
+  "editor.screenReaderAnnounceInlineSuggestion": false,
+  "editor.inlineSuggest.edits.showLongDistanceHint": false,
+  "editor.inlineSuggest.experimental.emptyResponseInformation": false,
+  "editor.inlineSuggest.minShowDelay": 10000,
+  "editor.inlineSuggest.enabled": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "background.fullscreen": {
+    "images": [],
+    "opacity": 0.1,
+    "size": "cover",
+    "position": "center",
+    "interval": 0,
+    "random": false
+  },
+  "powershell.promptToUpdatePowerShell": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "punctuation.definition.tag",
+        "settings": {
+          "foreground": "#5C6370"
+        }
+      },
+      {
+        "scope": "entity.name.tag",
+        "settings": {
+          "foreground": "#61AFEF"
+        }
+      },
+      {
+        "scope": "entity.other.attribute-name",
+        "settings": {
+          "foreground": "#56B6C2"
+        }
+      },
+      {
+        "scope": "string.quoted",
+        "settings": {
+          "foreground": "#98C379"
+        }
+      },
+      {
+        "scope": "text.xml",
+        "settings": {
+          "foreground": "#ffffff"
+        }
+      },
+      {
+        "scope": "comment.block.xml",
+        "settings": {
+          "foreground": "#528BFF"
+        }
+      }
+    ]
+  },
+  "workbench.editorAssociations": {
+    "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+    "*.bin": "hexEditor.hexedit"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "codingcopilot.enableCodelens": false,
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "security.allowedUNCHosts": ["wsl.localhost"],
+  "window.customMenuBarAltFocus": false,
+  "window.enableMenuBarMnemonics": false,
+  "files.associations": {
+    "*.h": "c"
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.useModal": "off",
+  "chat.disableAIFeatures": true
+}

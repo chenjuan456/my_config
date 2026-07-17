@@ -1,0 +1,113 @@
+# ============================================================
+# 1. 环境变量与编辑器 (提前设置，供后续工具使用)
+# ============================================================
+export EDITOR="vim"
+export VISUAL="vim"
+# export LANG=en_US.UTF-8  # 如有需要可取消注释
+
+# ============================================================
+# 2. Conda 初始化 (提前加载，确保 PATH 正确)
+# ============================================================
+# >>> conda initialize >>>
+__conda_setup="$('/home/chenjuan/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/chenjuan/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/chenjuan/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/chenjuan/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# ============================================================
+# 3. NVM (建议保持现状，若启动慢再考虑懒加载)
+# ============================================================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# ============================================================
+# 4. Zsh Vim 模式与光标形状
+# ============================================================
+bindkey -v
+export KEYTIMEOUT=20
+bindkey -M viins 'jk' vi-cmd-mode
+
+# 使用 add-zsh-hook 避免覆盖 Starship 的 precmd
+autoload -Uz add-zsh-hook
+
+_zsh_vi_cursor() {
+  case $KEYMAP in
+    vicmd)      echo -ne '\e[2 q' ;;  # 方块
+    viins|main) echo -ne '\e[6 q' ;;  # 竖线
+  esac
+}
+zle -N zle-keymap-select _zsh_vi_cursor
+zle -N zle-line-init _zsh_vi_cursor
+add-zsh-hook precmd _zsh_vi_cursor
+
+# 退出 zsh 时恢复终端默认光标
+_restore_cursor() { echo -ne '\e[0 q' }
+add-zsh-hook zshexit _restore_cursor
+
+# ============================================================
+# 5. 别名
+# ============================================================
+alias d2u="dos2unix"
+
+# ============================================================
+# 6. CLI 工具初始化
+# ============================================================
+eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
+eval "$(starship init zsh)"
+
+# ============================================================
+# 7. Yazi 文件管理器包装函数
+# ============================================================
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#export PATH="$HOME/.fzf/bin:$PATH"
+#export HOST_IP=$(ip route show default | awk '{print $3}')
+#export http_proxy="http://${HOST_IP}:7897"
+#export https_proxy="http://${HOST_IP}:7897"
+#export all_proxy="http://${HOST_IP}:7897"
+alias clangpp='clang++'
+alias gpp='g++'
+alias ls='lsd'
+alias l='ls -l'      # 长格式
+alias la='ls -a'     # 显示所有文件（包括隐藏文件）
+alias lla='ls -la'   # 长格式并显示所有文件
+alias lt='ls --tree' # 树状图显示
+
+alias zj="zellij"
+alias ex="explorer.exe ."
+
+alias lg='lazygit'
+alias gst='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git pull'
+export PATH="$HOME/.local/bin:$PATH"
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+alias zv='EDITOR=vim zellij action edit-scrollback'
+
+# mimocode
+export PATH=/home/chenjuan/.mimocode/bin:$PATH
+export CONDA_CHANGEPS1=false
+alias ff='fastfetch'

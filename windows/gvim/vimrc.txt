@@ -1,0 +1,131 @@
+set nocompatible
+set background=dark
+colorscheme catppuccin
+
+set lines=38 columns=120
+
+autocmd GUIEnter * set t_vb=
+set number
+set relativenumber
+set backspace=indent,eol,start
+set guifont=JetBrains_Mono:h16
+set guicursor+=a:blinkon0
+" Insert 模式下 Ctrl+V 粘贴系统剪贴板
+inoremap <C-v> <C-r>+
+winpos 673 161
+" gVim 界面精简
+set guioptions-=T   " 去工具栏
+set guioptions-=m   " 去菜单栏
+set guioptions-=r   " 去右侧滚动条
+set guioptions-=L   " 去左侧滚动条
+
+nnoremap <F1> :set guioptions+=m<CR>
+nnoremap <Leader>c gcc
+
+set encoding=utf-8
+" 自动识别中文文件编码（GBK/GB18030/UTF-8 都能正常打开）
+set fileencodings=ucs-bom,utf-8,gb18030,gbk,cp936
+set nospell
+set lazyredraw
+
+set ttyfast
+
+" 关闭响铃
+set noerrorbells
+autocmd GUIEnter * set vb t_vb=
+
+let g:loaded_matchparen = 1
+inoremap jk <Esc>l
+
+syntax on
+filetype plugin indent on
+
+set ttimeoutlen=20
+set cursorline
+" set showcmd
+let mapleader = " "
+
+" ========== 剪贴板（与系统互通） ==========
+set clipboard=unnamed
+
+
+" ========== 备份/交换/撤销文件集中存放 ==========
+let s:cache = expand('~/vimfiles/.cache')
+for s:d in ['backup', 'swap', 'undo']
+  if !isdirectory(s:cache . '/' . s:d)
+    call mkdir(s:cache . '/' . s:d, 'p')
+  endif
+endfor
+set backupdir^=~/vimfiles/.cache/backup//
+set directory^=~/vimfiles/.cache/swap//
+set undodir^=~/vimfiles/.cache/undo//
+set backup
+set undofile
+
+" ========== 搜索 ==========
+set hlsearch
+set ignorecase
+set smartcase
+nnoremap H ^
+nnoremap L $
+
+" ========== 窗口跳转 ==========
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+nnoremap <leader>q :q!<CR>
+" ========== 快捷键 ==========
+nnoremap J 5j
+vnoremap J 5j
+nnoremap K 5k
+vnoremap K 5k
+nnoremap <leader>s :w<CR>
+
+" ========== EasyMotion ==========
+set timeoutlen=500
+nmap <leader>, <Plug>(easymotion-w)
+nmap <leader>i <Plug>(easymotion-b)
+let g:EasyMotion_keys = 'jkluiophnm,asdfgwervxc'
+
+hi EasyMotionTarget        ctermfg=red    cterm=bold guifg=#87d75f gui=bold
+hi EasyMotionTarget2First  ctermfg=yellow cterm=bold guifg=#87d75f gui=bold
+hi EasyMotionTarget2Second ctermfg=green  cterm=bold guifg=#87d75f gui=bold
+hi EasyMotionShade         ctermfg=darkgray           guifg=#666666
+" ========== vim-plug 自动下载 ==========
+let s:plug = expand('~/vimfiles/autoload/plug.vim')
+if empty(glob(s:plug))
+  silent execute '!curl -fLo ' . shellescape(s:plug) . ' --create-dirs '
+    \ . 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+"=================lightline=================
+"
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+" ========== 插件 ==========
+if filereadable(s:plug)
+  call plug#begin('~/vimfiles/plugged')
+  Plug 'sheerun/vim-polyglot'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'preservim/nerdtree'
+  Plug 'tpope/vim-commentary'
+  Plug 'itchyny/lightline.vim'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'tpope/vim-surround'
+  call plug#end()
+endif
+
+nnoremap <BS> <<
+nnoremap <Tab> >>
+set scrolloff=5
+
+" 关闭文件信息提示（如 "written"）
+set shortmess+=I     
+set shortmess+=W      
+set shortmess+=a       
+set noshowmode          
+set noshowcmd           
