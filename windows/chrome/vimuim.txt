@@ -1,0 +1,29 @@
+" 1. 解绑原功能：释放 h/l 和 大写的 J/K
+unmap h
+unmap l
+unmap J
+unmap K
+unmap /
+
+" 2. 新映射：h/l 用于切换标签页
+map h previousTab    " 向左切标签
+map l nextTab        " 向右切标签
+
+" 3. 新映射：Shift+J/K 用于浏览器前进后退
+map J goBack        " 后退 (History)
+map K goForward     " 前进
+
+unmap v
+map , moveTabLeft
+map . moveTabRight
+
+
+unmap b
+unmap B
+map b Vomnibar.activateBookmarksInNewTab
+map B Vomnibar.activateBookmarks
+
+unmap o
+unmap O
+map o Vomnibar.activateInNewTab
+map O Vomnibar.activate
