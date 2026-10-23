@@ -1,29 +1,36 @@
-" 1. 解绑原功能：释放 h/l 和 大写的 J/K
+" 1. 标签页切换：h/l 向左/右切标签
 unmap h
 unmap l
+map h previousTab
+map l nextTab
+
+" 2. 历史记录导航：Shift+J/K 后退/前进
 unmap J
 unmap K
-unmap /
+map J goBack
+map K goForward
 
-" 2. 新映射：h/l 用于切换标签页
-map h previousTab    " 向左切标签
-map l nextTab        " 向右切标签
-
-" 3. 新映射：Shift+J/K 用于浏览器前进后退
-map J goBack        " 后退 (History)
-map K goForward     " 前进
-
-unmap v
+" 3. 标签页位置移动：逗号向左，句号向右
 map , moveTabLeft
 map . moveTabRight
 
-
+" 4. 书签打开：b 新标签页，B 当前标签页
 unmap b
 unmap B
 map b Vomnibar.activateBookmarksInNewTab
 map B Vomnibar.activateBookmarks
 
+" 5. 网址/搜索：o 新标签页，O 当前标签页
 unmap o
 unmap O
 map o Vomnibar.activateInNewTab
 map O Vomnibar.activate
+
+" 6. 文本选择：i 替代 yv 进入选择模式
+unmap i
+map i LinkHints.activateSelect
+map yp copyWindowInfo type="tab" format="[${title}](${url})"
+mapKey <H:v> <0>
+mapKey <L:v> <$>
+mapKey <J:v> <5j>
+mapKey <K:v> <5k>
